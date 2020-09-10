@@ -10,17 +10,15 @@ seleksiNilai = (begin, finish, arr = []) => {
       console.log("Tipedata parameter tidak sesuai");
     } else {
       if (arr.length <= 5) {
-          console.log( arr)
+        console.log(arr);
         console.log("Data array harus lebih dari 5");
       } else {
         if (begin >= finish) {
           console.log("Nilai akhir harus lebih besar dari nilai awal");
         } else {
-          sortArr = arr.sort((a, b) => begin - finish);
-          console.log(begin , finish)
-          //NOTED
-          limitArr = sortArr.slice(begin, finish);
-          console.log(limitArr);
+          filterArr = arr.filter((items) => items > begin && items < finish);
+          sortArr = filterArr.sort((a, b) => a - b);
+          console.log(sortArr);
         }
       }
     }
@@ -29,4 +27,4 @@ seleksiNilai = (begin, finish, arr = []) => {
 
 // seleksiNilai();
 // seleksiNilai(0, 2, 10);
-seleksiNilai(5,20,[2,25,4,14,17,30,8]);
+seleksiNilai(5, 20, [2, 25, 4, 14, 17, 30, 8]);
