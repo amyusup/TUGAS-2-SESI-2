@@ -35,11 +35,10 @@ searchName = (words, limit, callback) => {
 
 search = (words, limit) => {
   return (newName = name
-    .filter((fungsiHitung = (items) => items.indexOf(words) != -1))
+    .filter((items) => items.indexOf(words) != -1)
     .slice(0, limit));
 };
 
 // searchName();
 // searchName("a","a","a");
-searchName("an",2,search);
-
+searchName("an", 2, search);
